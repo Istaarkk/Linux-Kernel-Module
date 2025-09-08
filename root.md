@@ -88,7 +88,7 @@ module_init(rootkit_init);
 module_exit(rootkit_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Grok");
+MODULE_AUTHOR("Me");
 MODULE_DESCRIPTION("Educational rootkit module with char device for privilege escalation");
 ```
 
