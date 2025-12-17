@@ -1,4 +1,4 @@
-# 🐧 Linux Kernel Rootkit Module — Privilege Escalation (Educational)
+# Linux Kernel Rootkit Module — Privilege Escalation (Educational)
 
 > **Disclaimer**  
 > Ce module est uniquement destiné à l’**apprentissage** et à la **recherche en cybersécurité**.  
@@ -114,7 +114,7 @@ clean:
 
 ---
 
-## 🚀 Compilation & Chargement
+## Compilation & Chargement
 
 1. Désactiver temporairement AppArmor (si activé) :  
    ```bash
