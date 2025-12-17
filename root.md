@@ -1,13 +1,13 @@
 # 🐧 Linux Kernel Rootkit Module — Privilege Escalation (Educational)
 
-> ⚠️ **Disclaimer**  
+> **Disclaimer**  
 > Ce module est uniquement destiné à l’**apprentissage** et à la **recherche en cybersécurité**.  
 > Ne l’exécute que dans une **VM isolée** avec des snapshots.  
 > Ne jamais utiliser en production : il modifie les **credentials kernel** et peut rendre ton système instable.  
 
 ---
 
-## 📌 Description
+## Description
 
 Ce projet implémente un **Linux Kernel Module (LKM)** éducatif qui crée un **périphérique caractère** :  
 `/dev/rootkit`  
@@ -17,7 +17,7 @@ Ce projet implémente un **Linux Kernel Module (LKM)** éducatif qui crée un **
 
 ---
 
-## 🛠️ Code Source
+## Code Source
 
 Fichier : `rootkit.c`
 
@@ -94,7 +94,7 @@ MODULE_DESCRIPTION("Educational rootkit module with char device for privilege es
 
 ---
 
-## ⚙️ Préparation de l’Environnement
+## Préparation de l’Environnement
 
 Installer les headers du kernel :  
 ```bash
@@ -143,7 +143,7 @@ clean:
 
 ---
 
-## 🔑 Exploitation (Test)
+## Exploitation (Test)
 
 Écrire la chaîne magique pour escalader :  
 ```bash
@@ -154,14 +154,6 @@ Vérifier l’identité :
 ```bash
 id
 ```
-
----
-
-## ✅ Résumé
-
-- 📂 Module installé : `/dev/rootkit`  
-- 🔑 Chaîne magique : `"magic"`  
-- 🧑‍💻 Effet : Escalade des privilèges → utilisateur → root  
 
 ---
 
