@@ -1,0 +1,1 @@
+savedcmd_get_root.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/lib/modules/6.18.6-arch1-1/build/scripts/module.lds -o get_root.ko get_root.o get_root.mod.o .module-common.o
