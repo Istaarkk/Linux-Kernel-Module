@@ -1,9 +1,8 @@
-obj-m += get_root.o
-KDIR := /lib/modules/$(shell uname -r)/build
-PWD := $(shell pwd)
+obj-m += rootkit.o
+rootkit-objs := get_root.o hide.o
 
 all:
-	make -C $(KDIR) M=$(PWD) modules
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
-	make -C $(KDIR) M=$(PWD) clean
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean

